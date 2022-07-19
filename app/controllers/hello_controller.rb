@@ -1,23 +1,11 @@
 class HelloController < ApplicationController
 
-
-
   def index
-    if request.post? then
-     @title = 'Result'
-     if params['check']then
-      @msg= 'you checked'
-     else
+    @msg ='Person data. '
+    @data = Person.all 
+  end 
 
-      `msg= 'not checked`
-     end
-    else
-      @title='Index'
-      @msg='check it..'
-    end
-
-
-  end
+  
 
 
 
