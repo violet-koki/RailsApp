@@ -1,0 +1,32 @@
+<h1>Cards#edit</h1>
+
+
+<p>※「<%= @card.title %>」
+    の内容を編集します。</p>
+<%= form_for(@card,url:{controller:'cards',
+    action:'edit',id:@card.id}) do |form| %>
+    <div class="form-group">
+      <label for="title">タイトル</label>
+      <%= form.text_field:title,{class:"form-controll"}%>
+    </div>
+    <div class="form-group">
+      <label for="price">価格</label>
+      <%= form.text_field:price,{class:"form-controll"}%>
+    </div>
+    <div class="form-group">
+      <label for="publisher">出版社</label>
+      <%= form.text_field:publisher,{class:"form-controll"}%>
+    </div>
+    <div class="form-group">
+      <label for="memo">コメント</label>
+      <%= form.text_area:memo,{rows:5,class::"form-controll"}%>
+    </div>
+
+    <%= form.submit"更新" %>
+<% end %>
+<p class="link"><a href="/cards">
+
+
+   &lt;&lt; ※トップページに戻る</a></p>
+
+   

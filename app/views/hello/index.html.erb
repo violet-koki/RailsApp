@@ -1,27 +1,15 @@
-<h1 class="display-4 text-primary">Cards#index</h1>
+<h1 class="display-4"> <%= @title %> </h1>
+<p> <%= @msg %></p>
+<form method="POST" action="/hello/index">
+ <input type="text" class="form-controll"
+  name="input1" value="<%= @value %>">
+ <input type="submit" class="btn btn-primary">
+</form>
 
-<table class="table">
- <tr>
-  <th>ID</th><th>題名</th>
-   <th>著者</th><th colspan="2"></th>
-  </th>
 
-<% @cards.each do |obj| %>
-<tr>
 
-  <td width="35px"><%= obj.id%></td>
-  <td width="50%"><a href="/cards/<%=obj.id%>">
-   <%= obj.title %></a></td>
-  <td><%= obj.author %></td>
-  <td width= "80px">
-   <a href="/cards/edit/<%= obj.id> %>"> 
-   編集</a></td>
-  <td width ="80px">
-   <a href="javascript:delData(
-   <%=  (obj.id.to_s +",'".to_s +
-   obj.title.to_s).html_safe %>');">削除</a></td>
-</tr>
-<% end %>
-</table>
+
+
+
 
 
